@@ -97,7 +97,7 @@ $(document).ready(function(){
       
       // for each element in the questionOptions array, create a button pertaining to each element
       $.each(questionOptions, function(index, key){
-        $('#options').append($('<button class="option btn btn-info btn-lg">'+key+'</button>'));
+        $('#options').append($('<button class="mx-3 option btn btn-info btn-md">'+key+'</button>'));
       })
       
     },
@@ -113,7 +113,7 @@ $(document).ready(function(){
           }
       }
       // time has run out
-      else if(trivia.timer === 0){
+      else if(trivia.timer < 0){
         $('.option').remove();
         trivia.unanswered++;
         trivia.timerOn = false;
@@ -150,7 +150,7 @@ $(document).ready(function(){
         trivia.incorrect++;
         clearInterval(trivia.timerId);
         setTimeout(trivia.guessResult, 3000);
-        $('#results').html('<h3>Better luck next time! The correct answer was: '+ currentAnswer +'</h3>');
+        $('#results').html('<h3>Incorrect! Better luck next time! The correct answer was: '+ currentAnswer +'</h3>');
       }
       
     },
@@ -170,7 +170,7 @@ $(document).ready(function(){
           .html('<h3>Thank you for playing!</h3>'+
           '<p>Correct: '+ trivia.correct +'</p>'+
           '<p>Incorrect: '+ trivia.incorrect +'</p>'+
-          '<p>Unaswered: '+ trivia.unanswered +'</p>'+
+          '<p>Unanswered: '+ trivia.unanswered +'</p>'+
           '<p>Please play again!</p>');
         
         // hide game sction
