@@ -46,6 +46,29 @@ $(document).ready(function(){
       q6: '4',
       q7: '3:43',
     },
+
+    //gif that will be played unique to each correctly answered question
+    correctGIFs: {
+      q1: "./assets/images/brazilWin.webp",
+      q2: "./assets/images/kloseWin.webp",
+      q3: "./assets/images/michaelJordan.webp",
+      q4: "./assets/images/steelersWin.webp",
+      q5: "./assets/images/hattrickWin.webp",
+      q6: "./assets/images/texasWin.webp",
+      q7: "./assets/images/mileWin.webp",
+    },
+    //gif that will be played unique to each incorrectly answered question
+    incorrectGIFs: {
+      q1: "./assets/images/brazilLoss.webp",
+      q2: "./assets/images/kloseLoss.webp",
+      q3: "./assets/images/mjLoss.webp",
+      q4: "./assets/images/steelersLoss.webp",
+      q5: "./assets/images/hattrickLoss.webp",
+      q6: "./assets/images/texasLoss.webp",
+      q7: "./assets/images/mileLoss.webp",
+
+
+    },
     // trivia methods
     // method to initialize game
     startGame: function(){
@@ -118,7 +141,7 @@ $(document).ready(function(){
         trivia.unanswered++;
         trivia.timerOn = false;
         clearInterval(trivia.timerId);
-        setTimeout(trivia.guessResult, 3000);
+        setTimeout(trivia.guessResult, 3500);
         $('#results').html('<h3>Out of time! The answer was '+ Object.values(trivia.answers)[trivia.currentSet] +'</h3>');
       }
       
@@ -139,8 +162,8 @@ $(document).ready(function(){
         trivia.correct++;
         //
         clearInterval(trivia.timerId);
-        setTimeout(trivia.guessResult, 3000);
-        $('#results').html('<h3>Correct Answer!</h3>');
+        setTimeout(trivia.guessResult, 3500);
+        $('#results').html('<h3>Correct Answer! <img class="text-center" src=' + Object.values(trivia.correctGIFs)[trivia.currentSet] + ' height= 200px width= 200px></h3>');
       }
       // else the user picked the wrong option, increment incorrect
       else{
@@ -149,8 +172,8 @@ $(document).ready(function(){
         
         trivia.incorrect++;
         clearInterval(trivia.timerId);
-        setTimeout(trivia.guessResult, 3000);
-        $('#results').html('<h3>Incorrect! Better luck next time! The correct answer was: '+ currentAnswer +'</h3>');
+        setTimeout(trivia.guessResult, 3500);
+        $('#results').html('<h3>Incorrect! The correct answer was: '+ currentAnswer +'<img class="text-center" src=' + Object.values(trivia.incorrectGIFs)[trivia.currentSet] + ' height= 200px width= 200px></h3>');
       }
       
     },
