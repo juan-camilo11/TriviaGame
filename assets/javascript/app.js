@@ -142,7 +142,7 @@ $(document).ready(function(){
         trivia.timerOn = false;
         clearInterval(trivia.timerId);
         setTimeout(trivia.guessResult, 3500);
-        $('#results').html('<h3>Out of time! The answer was '+ Object.values(trivia.answers)[trivia.currentSet] +'</h3>');
+        $('#results').html('<h3>Out of time! The answer was '+ Object.values(trivia.answers)[trivia.currentSet] + '<img class="text-center" src=' + Object.values(trivia.incorrectGIFs)[trivia.currentSet] + ' height= 200px width= 200px ml-4></h3>');
       }
       
       
@@ -163,7 +163,7 @@ $(document).ready(function(){
         //
         clearInterval(trivia.timerId);
         setTimeout(trivia.guessResult, 3500);
-        $('#results').html('<h3>Correct Answer! <img class="text-center" src=' + Object.values(trivia.correctGIFs)[trivia.currentSet] + ' height= 200px width= 200px></h3>');
+        $('#results').html('<h3 class="text-center">Correct! <img src=' + Object.values(trivia.correctGIFs)[trivia.currentSet] + ' height= 200px width= 200px ml-4></h3>');
       }
       // else the user picked the wrong option, increment incorrect
       else{
@@ -173,7 +173,7 @@ $(document).ready(function(){
         trivia.incorrect++;
         clearInterval(trivia.timerId);
         setTimeout(trivia.guessResult, 3500);
-        $('#results').html('<h3>Incorrect! The correct answer was: '+ currentAnswer +'<img class="text-center" src=' + Object.values(trivia.incorrectGIFs)[trivia.currentSet] + ' height= 200px width= 200px></h3>');
+        $('#results').html('<h3 class="text-center">Incorrect! The correct answer was: '+ currentAnswer +'<img src=' + Object.values(trivia.incorrectGIFs)[trivia.currentSet] + ' height= 200px width= 200px ml-4></h3>');
       }
       
     },
