@@ -49,7 +49,7 @@ $(document).ready(function(){
 
     //gif that will be played unique to each correctly answered question
     correctGIFs: {
-      q1: "./assets/images/brazilWin.webp",
+      q1: "./assets/images/brazilWin.gif",
       q2: "./assets/images/kloseWin.webp",
       q3: "./assets/images/michaelJordan.webp",
       q4: "./assets/images/steelersWin.webp",
@@ -64,8 +64,8 @@ $(document).ready(function(){
       q3: "./assets/images/mjLoss.webp",
       q4: "./assets/images/steelersLoss.webp",
       q5: "./assets/images/hattrickLoss.webp",
-      q6: "./assets/images/texasLoss.webp",
-      q7: "./assets/images/mileLoss.webp",
+      q6: "./assets/images/texasLoss.gif",
+      q7: "./assets/images/mileLoss.gif",
 
 
     },
